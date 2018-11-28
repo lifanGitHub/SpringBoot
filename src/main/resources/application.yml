@@ -1,0 +1,25 @@
+
+server:
+  port: 8080
+    
+spring:
+  application:
+    name: admin-managee
+  thymeleaf:
+    prefix: classpath:templates/
+    suffix: .html
+    cache: false
+  datasource:
+    url: "jdbc:mysql://184.170.223.3:3306/lifan"
+    username: root
+    password: 123456
+  resources:
+    static-locations:
+    - classpath:static/
+    - file:external/
+    
+debug: true
+
+
+
+
