@@ -1,4 +1,4 @@
-package com.lifan.spring;
+package com.lifan.spring.test;
 
 /**
  * @author by LiFan

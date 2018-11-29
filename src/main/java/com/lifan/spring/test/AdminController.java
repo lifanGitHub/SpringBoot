@@ -1,6 +1,6 @@
-package com.lifan.spring;
+package com.lifan.spring.test;
 
-import com.lifan.spring.mapper.MapperMain;
+import com.lifan.spring.test.mapper.MapperMain;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

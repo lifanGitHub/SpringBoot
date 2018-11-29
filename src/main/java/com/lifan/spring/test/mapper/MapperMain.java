@@ -1,6 +1,6 @@
-package com.lifan.spring.mapper;
+package com.lifan.spring.test.mapper;
 
-import com.lifan.spring.AccountEntry;
+import com.lifan.spring.test.AccountEntry;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Result;
