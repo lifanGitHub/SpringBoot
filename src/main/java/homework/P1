@@ -1,0 +1,36 @@
+查询" 01 "课程比" 02 "课程成绩高的学生的信息及课程分数
+select *
+from ( select SId, score from SC where SC.CId = '01' ) as t1,
+( select SId, score from SC where SC.CId = '02' ) as t2
+where t1.SId = t2.SId
+and t1.score > t2.SId;
+
+查询同时存在" 01 "课程和" 02 "课程的情况
+select *
+from ( select SId, score from SC where SC.CId = '01' ) as t1,
+( select SId, score from SC where SC.CId = '02' ) as t2
+where t1.SId = t2.SId;
+
+查询存在" 01 "课程但可能不存在" 02 "课程的情况(不存在时显示为 null )
+select *
+from (select SId ,score from SC where SC.CId='01')as t1
+left join (select SId ,score from SC where SC.CId='02') as t2
+on t1.SId = t2.SId;
+
+查询不存在" 01 "课程但存在" 02 "课程的情况
+select *
+from SC
+where SC.SId not in (select SId from SC where SC.CId='01')
+and  SC.CId='02';
+
+
+数据表
+--SId 学生编号,Sname 学生姓名,Sage 出生年月,Ssex 学生性别
+
+--1.学生表 Student(SId,Sname,Sage,Ssex)
+
+--2.课程表 Course(CId,Cname,TId) --CId --课程编号,Cname 课程名称,TId 教师编号
+
+--3.教师表 Teacher(TId,Tname) --TId 教师编号,Tname 教师姓名
+
+--4.成绩表 SC(SId,CId,score) --SId 学生编号,CId 课程编号,score 分数

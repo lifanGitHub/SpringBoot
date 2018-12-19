@@ -20,6 +20,13 @@ spring:
     
 debug: true
 
+#logging:
+#  pattern:
+#    console: "%d - %msg%n"
+#  path: ./log/
+#  level:
+#    com.lifan.spring.LoggerTest: info
+
 
 
 
