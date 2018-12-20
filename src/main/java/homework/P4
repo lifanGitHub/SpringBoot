@@ -1,0 +1,28 @@
+查询所有同学的学生编号、学生姓名、选课总数、所有课程的总成绩(没成绩的显示为null)
+
+select SId, Sname, t1.sum1, t1.sum2
+from Student ,
+
+select CId as 编码, sum(score) as 总成绩
+from SC
+group by CId;
+
+查有成绩的学生信息
+select *
+from Student
+where EXISTS(select * from SC where Student.SId=SC.SId);//为什么*
+
+
+
+
+
+数据表
+--SId 学生编号,Sname 学生姓名,Sage 出生年月,Ssex 学生性别
+
+--1.学生表 Student(SId,Sname,Sage,Ssex)
+
+--2.课程表 Course(CId,Cname,TId) --CId --课程编号,Cname 课程名称,TId 教师编号
+
+--3.教师表 Teacher(TId,Tname) --TId 教师编号,Tname 教师姓名
+
+--4.成绩表 SC(SId,CId,score) --SId 学生编号,CId 课程编号,score 分数
