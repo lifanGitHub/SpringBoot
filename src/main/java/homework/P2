@@ -1,0 +1,30 @@
+查询平均成绩大于等于 60 分的同学的学生编号和学生姓名和平均成绩
+
+select student.*,t1.avgscore
+from student inner JOIN(
+select sc.SId ,AVG(sc.score)as avgscore
+from sc
+GROUP BY sc.SId
+HAVING AVG(sc.score)>=60)as t1 on student.SId=t1.SId
+
+查询课程'01'的平均成绩
+select AVG(SC.score)
+from SC where SC.CId = '01'
+
+
+
+
+
+
+
+
+数据表
+--SId 学生编号,Sname 学生姓名,Sage 出生年月,Ssex 学生性别
+
+--1.学生表 Student(SId,Sname,Sage,Ssex)
+
+--2.课程表 Course(CId,Cname,TId) --CId --课程编号,Cname 课程名称,TId 教师编号
+
+--3.教师表 Teacher(TId,Tname) --TId 教师编号,Tname 教师姓名
+
+--4.成绩表 SC(SId,CId,score) --SId 学生编号,CId 课程编号,score 分数
