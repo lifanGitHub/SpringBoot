@@ -1,7 +1,7 @@
 查询「李」姓老师的数量
 
 select *
-from Teacher while Teacher.Tname like '李%';
+from Teacher where Teacher.Tname like '李%';
 
 select TId, Tname, COUNT(TId)
 from Teacher where Teacher.Tname like '李%';
